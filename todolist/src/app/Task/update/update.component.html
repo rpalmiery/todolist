@@ -1,0 +1,40 @@
+<div class="container col-md-6">
+    <div class="card">
+        <div class="card-header">
+            <h3>Set Worked Time - Task</h3>
+            <div class="card-body">
+
+                    <div class="form-group">
+                        <label for="">Title: </label>
+                        <input [(ngModel)]="task.title" type="text" class="form-control" disabled="true">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">Description: </label>
+                        <input [(ngModel)]="task.description" type="text" class="form-control" disabled="true">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">Estimated Time: </label>
+                        <input [(ngModel)]="task.estimateTime" type="text" class="form-control" disabled="true">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">Worked Time: </label>
+                        <input [(ngModel)]="task.workedTime" type="text" class="form-control" >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">Developer: </label>
+                        <select [(ngModel)]="devSelected" class="form-control" disabled="true">
+                            <option [value]="0">Seleccione ...</option>
+                            <option *ngFor="let dev of developers" [value]="dev.id">{{dev.firstName}} {{dev.lastName}}</option>
+                        </select>
+                    </div>
+
+                    <button (click)="persistTask()" class="btn btn-danger">Update Worked Time</button>
+
+            </div>
+        </div>
+    </div>
+</div>
